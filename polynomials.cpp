@@ -1,7 +1,4 @@
-struct polynomial {
-    int level;
-    double* values;
-};
+#include "polynomials.hpp"
 
 polynomial add(polynomial a, polynomial b) {
     polynomial returnValue{};
