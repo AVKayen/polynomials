@@ -41,7 +41,7 @@ polynomial subtract(polynomial a, polynomial b) {
             returnValue.values[i] += a.values[i];
         }
         if(i <= b.level) {
-            returnValue.values[i] += b.values[i];
+            returnValue.values[i] -= b.values[i];
         }
     }
     return returnValue;
