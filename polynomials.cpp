@@ -4,7 +4,7 @@ struct polynomial {
 };
 
 polynomial add(polynomial a, polynomial b) {
-    polynomial returnValue;
+    polynomial returnValue{};
     if (a.level > b.level) {
         returnValue.level = a.level;
     } else {
@@ -15,18 +15,18 @@ polynomial add(polynomial a, polynomial b) {
         returnValue.values[i] = 0;
     }
     for(int i = 0; i < returnValue.level; i++) {
-        for(int j = 0; j < a.level; j++) {
-            returnValue.values[i] += a.values[j];
+        if(i <= a.level) {
+            returnValue.values[i] += a.values[i];
         }
-        for(int j = 0; j < b.level; j++) {
-            returnValue.values[i] += b.values[j];
+        if(i <= b.level) {
+            returnValue.values[i] += b.values[i];
         }
     }
     return returnValue;
 }
 
 polynomial subtract(polynomial a, polynomial b) {
-    polynomial returnValue;
+    polynomial returnValue{};
     if (a.level > b.level) {
         returnValue.level = a.level;
     } else {
@@ -37,18 +37,18 @@ polynomial subtract(polynomial a, polynomial b) {
         returnValue.values[i] = 0;
     }
     for(int i = 0; i < returnValue.level; i++) {
-        for(int j = 0; j < a.level; j++) {
-            returnValue.values[i] += a.values[j];
+        if(i <= a.level) {
+            returnValue.values[i] += a.values[i];
         }
-        for(int j = 0; j < b.level; j++) {
-            returnValue.values[i] -= b.values[j];
+        if(i <= b.level) {
+            returnValue.values[i] += b.values[i];
         }
     }
     return returnValue;
 }
 
 polynomial multiply(polynomial a, polynomial b) {
-    polynomial returnValue;
+    polynomial returnValue{};
     returnValue.level = a.level + b.level - 1;
     returnValue.values = new double[returnValue.level];
     for(int i = 0; i < returnValue.level; i++) {
