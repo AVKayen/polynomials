@@ -59,6 +59,7 @@ polynomial multiply(polynomial a, polynomial b) {
             returnValue.values[i+j] += a.values[i] * b.values[j];
         }
     }
+    return returnValue;
 }
 
 int get_level(polynomial a) {
