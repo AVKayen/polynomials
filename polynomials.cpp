@@ -1,6 +1,6 @@
 struct polynomial {
-    int level;          // 4                                2                   4
-    double* values;     // 7 + 5x + 0x^2 + 12x^3            5 + 2x              12 + 7x + .. + ...
+    int level;          // 4               +                2                   6
+    double* values;     // 7 + 5x + 0x^2 + 12x^3            5 + 2x              x^4 
 };
 
 polynomial add(polynomial a, polynomial b) {
@@ -46,5 +46,20 @@ polynomial subtract(polynomial a, polynomial b) {
     }
     return returnValue;
 }
-polynomial get_level(polynomial a)
-polynomial get_value(polynomial a, int n)
+
+polynomial multiply(polynomial a, polynomial b) {
+    polynomial returnValue;
+    returnValue.level = a.level + b.level - 1;
+    returnValue.values = new double[returnValue.level];
+    for(int i = 0; i < returnValue.level; i++) {
+        returnValue.values[i] = 0;
+    }
+    for(int i = 0; i < a.level; i++) {
+        for(int i = 0; i < b.level; i++) {
+            
+        }
+    }
+}
+
+int get_level(polynomial a)
+double get_value(polynomial a, int n)

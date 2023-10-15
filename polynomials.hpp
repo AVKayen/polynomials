@@ -5,5 +5,6 @@ struct polynomial {
 
 polynomial add(polynomial a, polynomial b);
 polynomial subtract(polynomial a, polynomial b);
-polynomial get_level(polynomial a);
-polynomial get_value(polynomial a, int n);
+polynomial multiply(polynomial a, polynomial b);
+int get_level(polynomial a);
+double get_value(polynomial a, int n);
