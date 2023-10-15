@@ -14,7 +14,7 @@ int main() {
     polynomial poly3 = add(poly1, poly2);
     cout << get_level(poly3);
     for(int i = 0; i < get_level(poly3); i++) {
-        cout << endl << get_value(poly3, i);
+        cout << get_value(poly3, i) << "x^" << i << " + ";
     }
     return 0;
 }
