@@ -12,10 +12,10 @@ polynomial add(polynomial a, polynomial b) {
         returnValue.values[i] = 0;
     }
     for(int i = 0; i < returnValue.level; i++) {
-        if(i <= a.level) {
+        if(i < a.level) {
             returnValue.values[i] += a.values[i];
         }
-        if(i <= b.level) {
+        if(i < b.level) {
             returnValue.values[i] += b.values[i];
         }
     }
@@ -34,10 +34,10 @@ polynomial subtract(polynomial a, polynomial b) {
         returnValue.values[i] = 0;
     }
     for(int i = 0; i < returnValue.level; i++) {
-        if(i <= a.level) {
+        if(i < a.level) {
             returnValue.values[i] += a.values[i];
         }
-        if(i <= b.level) {
+        if(i < b.level) {
             returnValue.values[i] -= b.values[i];
         }
     }
@@ -65,4 +65,10 @@ int get_level(polynomial a) {
 
 double get_value(polynomial a, int n) {
     return a.values[n];
+}
+
+polynomial set_value(polynomial a, int n, int x) {
+    polynomial returnValue;
+    returnValue.values[n] = x;
+    return returnValue;
 }
